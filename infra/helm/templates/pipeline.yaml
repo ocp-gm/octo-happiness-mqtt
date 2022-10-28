@@ -15,7 +15,7 @@ spec:
         - name: STORAGE_DRIVER
           value: vfs
         - name: DOCKERFILE
-          value: Dockerfile.native-micro
+          value: Dockerfile
         - name: CONTEXT
           value: .
         - name: TLSVERIFY
@@ -90,7 +90,7 @@ spec:
             image-registry.openshift-image-registry.svc:5000/openshift/java:latest
         - name: GOALS
           value:
-            - package -Dnative
+            - package
         - name: PROXY_PROTOCOL
           value: http
         - name: CONTEXT_DIR
