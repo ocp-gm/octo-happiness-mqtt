@@ -15,7 +15,7 @@ spec:
         - name: STORAGE_DRIVER
           value: vfs
         - name: DOCKERFILE
-          value: Dockerfile
+          value: Dockerfile.native-micro
         - name: CONTEXT
           value: .
         - name: TLSVERIFY
@@ -36,7 +36,7 @@ spec:
     - name: git-clone
       params:
         - name: url
-          value: 'https://github.com/sa-mw-dach/octo-happiness-template-java.git'
+          value: {{ coalesce .Values.git.url "https://github.com/sa-mw-dach/octo-happiness-template-java.git" }}
         - name: revision
           value: main
         - name: submodules
@@ -90,7 +90,7 @@ spec:
             image-registry.openshift-image-registry.svc:5000/openshift/java:latest
         - name: GOALS
           value:
-            - package
+            - package -Dnative
         - name: PROXY_PROTOCOL
           value: http
         - name: CONTEXT_DIR

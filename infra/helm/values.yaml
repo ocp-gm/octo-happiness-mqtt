@@ -6,4 +6,5 @@ config:
     greeting: 'Hello World.'
 
 git:
-    url: https://github.com/sa-mw-dach/octo-happiness-template-java.git
+    url: https://github.com/ocp-gm/octo-happiness-mqtt.git
+    
