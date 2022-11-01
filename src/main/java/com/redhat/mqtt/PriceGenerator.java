@@ -1,5 +1,6 @@
 package com.redhat.mqtt;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import io.smallrye.mutiny.Multi;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
@@ -12,6 +13,7 @@ import java.util.Random;
  * The prices are written to a MQTT topic (prices). The MQTT configuration is specified in the application configuration.
  */
 @ApplicationScoped
+@RegisterForReflection
 public class PriceGenerator {
 
     private Random random = new Random();

@@ -2,6 +2,7 @@ package com.redhat.mqtt;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
@@ -12,6 +13,7 @@ import io.smallrye.reactive.messaging.annotations.Broadcast;
  * The result is pushed to the "my-data-stream" stream which is an in-memory stream.
  */
 @ApplicationScoped
+@RegisterForReflection
 public class PriceConverter {
 
     private static final double CONVERSION_RATE = 0.88;

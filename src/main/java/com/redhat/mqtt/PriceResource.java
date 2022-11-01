@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.reactivestreams.Publisher;
 
 import io.smallrye.reactive.messaging.annotations.Channel;
@@ -14,6 +15,7 @@ import io.smallrye.reactive.messaging.annotations.Channel;
  * A simple resource retrieving the "in-memory" "my-data-stream" and sending the items to a server sent event.
  */
 @Path("/prices")
+@RegisterForReflection
 public class PriceResource {
 
     @Inject
