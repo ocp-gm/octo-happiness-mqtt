@@ -18,7 +18,7 @@ public class PriceGenerator {
 
     @Outgoing("topic-price")
     public Multi<Integer> generate() {
-        return Multi.createFrom().ticks().every(Duration.ofSeconds(5))
+        return Multi.createFrom().ticks().every(Duration.ofSeconds(1))
                 .onOverflow().drop()
                 .map(tick -> {
                     int price = random.nextInt(100);
